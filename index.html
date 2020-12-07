@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script defer src="pokemon.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="vue">
+    <div><button id="mybutton" v-on:click="next">volgende</button>
+      <button id="mybutton" v-on:click="prev">vorige</button>
+    </div>
+    <h1 id='titel'>Pokédex</h1>
+    <p2>{{name}} zijn Pokédex nummer is #{{id}}</p2>
+    <div class="container">
+      <img id="image" :src="spriteUrl"> 
+    </div>
+    <p class="badge"> {{types}}</p>
+    <div>
+      <p2>{{flavor}}</p2>
+    </div>
+    <div>
+      <ul>{{moves}}</ul>
+    </div>
+    <div>
+     <a href="https://nl.wikipedia.org/wiki/Lijst_van_Pok%C3%A9mon">Wikipedia></a>
+    </div>
+    <div>
+      <input type="number" v-model="id" v-on:input="getPokemon(id)">
+    </div>
+    <div>
+      <p>© yorrit simons</p>
+    </div>
+  </div>
+</body>
+
+</html>
